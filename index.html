@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Academic website of Md. Mehedi Hasan, PhD researcher at the University of Tsukuba, Japan, working on recurrence triangles, nonlinear time-series analysis, and human gait.">
+  <meta name="description" content="Md. Mehedi Hasan — doctoral researcher at the University of Tsukuba working on recurrence triangles, nonlinear time-series analysis, and human gait.">
   <title>Md. Mehedi Hasan | Researcher</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
   <style>
     :root {
       --navy: #172b4d;
@@ -12,159 +15,239 @@
       --ink: #263449;
       --muted: #64748b;
       --paper: #f7f9fc;
+      --white: #ffffff;
       --line: #e3e9f1;
       --tint: #eef3fa;
+      --gold: #b7862f;
+      --gold-tint: #fbf4e6;
+      --serif: "Source Serif 4", Georgia, serif;
+      --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
-
+    html { scroll-behavior: smooth; scroll-padding-top: 76px; }
     body {
       margin: 0;
       background: var(--paper);
       color: var(--ink);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: var(--sans);
+      font-size: 16px;
       line-height: 1.7;
     }
-
     a { color: var(--blue); text-decoration: none; }
     a:hover { text-decoration: underline; }
+    h1, h2, h3 { font-family: var(--serif); color: var(--navy); }
 
-    /* Header */
+    /* ---------- Header ---------- */
     header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(6px);
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--line);
     }
     nav {
-      max-width: 1040px;
-      margin: auto;
-      padding: 14px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
+      max-width: 1080px; margin: auto; padding: 14px 24px;
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
     }
-    .brand { font-weight: 700; color: var(--navy); font-size: 1.05rem; }
-    .nav-links { display: flex; gap: 22px; flex-wrap: wrap; }
-    .nav-links a { color: var(--ink); font-size: 0.95rem; }
+    .brand { font-family: var(--serif); font-weight: 700; font-size: 1.15rem; color: var(--navy); }
+    .brand:hover { text-decoration: none; }
+    .nav-links { display: flex; gap: 22px; }
+    .nav-links a { color: var(--ink); font-size: 0.92rem; font-weight: 500; }
     .nav-links a:hover { color: var(--blue); text-decoration: none; }
-
-    /* Layout */
-    main { max-width: 1040px; margin: auto; padding: 0 24px; }
-    section { padding: 64px 0; border-bottom: 1px solid var(--line); }
-    section:last-of-type { border-bottom: none; }
-    h2 { color: var(--navy); font-size: 1.7rem; margin: 0 0 8px; }
-    .section-intro { color: var(--muted); margin: 0 0 32px; }
-
-    /* Hero */
-    .hero { padding: 88px 0 72px; }
-    .eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--blue);
-      margin: 0 0 12px;
+    .menu-btn {
+      display: none; background: none; border: 1px solid var(--line); border-radius: 6px;
+      padding: 6px 10px; font: inherit; color: var(--navy); cursor: pointer;
     }
-    .hero h1 { color: var(--navy); font-size: clamp(2.2rem, 5vw, 3.2rem); line-height: 1.15; margin: 0 0 10px; }
-    .role { font-size: 1.15rem; color: var(--muted); margin: 0 0 24px; }
-    .hero p.lead { max-width: 680px; font-size: 1.08rem; margin: 0 0 32px; }
+
+    main { max-width: 1080px; margin: auto; padding: 0 24px; }
+    section { padding: 72px 0; border-bottom: 1px solid var(--line); }
+    section:last-of-type { border-bottom: none; }
+    .kicker {
+      text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.74rem;
+      font-weight: 600; color: var(--blue); margin: 0 0 8px;
+    }
+    h2 { font-size: 2rem; margin: 0 0 10px; line-height: 1.2; }
+    .section-intro { color: var(--muted); margin: 0 0 36px; max-width: 680px; }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      display: grid; grid-template-columns: 1fr 260px; gap: 56px; align-items: center;
+      padding: 96px 0 80px;
+    }
+    .hero h1 { font-size: clamp(2.4rem, 5.5vw, 3.5rem); line-height: 1.1; margin: 0 0 12px; }
+    .role { font-size: 1.12rem; color: var(--muted); margin: 0 0 6px; }
+    .role strong { color: var(--ink); font-weight: 600; }
+    .lead { font-size: 1.08rem; max-width: 640px; margin: 22px 0 30px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; padding: 0; list-style: none; }
+    .tags li {
+      background: var(--tint); color: var(--blue); font-size: 0.82rem; font-weight: 600;
+      padding: 4px 12px; border-radius: 999px;
+    }
     .buttons { display: flex; gap: 12px; flex-wrap: wrap; }
     .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      border: 1px solid var(--blue);
+      display: inline-block; padding: 11px 22px; border-radius: 6px;
+      font-weight: 600; font-size: 0.94rem; border: 1px solid var(--navy);
     }
-    .btn-primary { background: var(--navy); border-color: var(--navy); color: white; }
-    .btn-primary:hover { background: var(--blue); border-color: var(--blue); text-decoration: none; }
-    .btn-outline { color: var(--blue); background: white; }
-    .btn-outline:hover { background: var(--tint); text-decoration: none; }
+    .btn:hover { text-decoration: none; }
+    .btn-primary { background: var(--navy); color: #fff; }
+    .btn-primary:hover { background: var(--blue); border-color: var(--blue); }
+    .btn-outline { background: var(--white); color: var(--navy); }
+    .btn-outline:hover { background: var(--tint); }
 
-    /* Research cards */
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+    .rp-figure { margin: 0; text-align: center; }
+    .rp-figure canvas {
+      width: 260px; height: 260px; display: block;
+      background: var(--white); border: 1px solid var(--line); border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(23,43,77,0.08);
+    }
+    .rp-figure figcaption { font-size: 0.8rem; color: var(--muted); margin-top: 10px; }
+
+    /* ---------- Stats ---------- */
+    .stats {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+      background: var(--white); border: 1px solid var(--line); border-radius: 10px;
+      margin-bottom: 8px;
+    }
+    .stat { padding: 22px 20px; text-align: center; border-right: 1px solid var(--line); }
+    .stat:last-child { border-right: none; }
+    .stat b { display: block; font-family: var(--serif); font-size: 2rem; color: var(--navy); line-height: 1.1; }
+    .stat span { font-size: 0.85rem; color: var(--muted); }
+
+    /* ---------- About ---------- */
+    .about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; }
+    .about-grid p { margin: 0 0 16px; }
+    .edu { background: var(--white); border: 1px solid var(--line); border-radius: 10px; padding: 24px 26px; }
+    .edu h3 { font-size: 1.15rem; margin: 0 0 16px; }
+    .edu-item { padding-left: 16px; border-left: 2px solid var(--line); margin-bottom: 18px; }
+    .edu-item:last-child { margin-bottom: 0; }
+    .edu-item b { display: block; color: var(--navy); font-size: 0.97rem; }
+    .edu-item span { display: block; font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
+    .edu-item.current { border-left-color: var(--blue); }
+
+    /* ---------- Research ---------- */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; }
     .card {
-      background: white;
-      border: 1px solid var(--line);
-      border-top: 3px solid var(--blue);
-      border-radius: 8px;
-      padding: 22px;
+      background: var(--white); border: 1px solid var(--line); border-radius: 10px; padding: 24px;
+      transition: border-color .2s, transform .2s;
     }
-    .card h3 { color: var(--navy); font-size: 1.05rem; margin: 0 0 8px; }
-    .card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+    .card:hover { border-color: var(--blue); transform: translateY(-2px); }
+    .card .num { font-family: var(--serif); color: var(--blue); font-size: 0.95rem; font-weight: 700; }
+    .card h3 { font-size: 1.12rem; margin: 6px 0 8px; }
+    .card p { margin: 0; color: var(--muted); font-size: 0.94rem; }
 
-    /* Publications */
-    .pub-group { color: var(--navy); font-size: 1.05rem; margin: 36px 0 14px; }
-    .pub-group:first-of-type { margin-top: 0; }
+    /* ---------- News ---------- */
+    .news { list-style: none; margin: 0; padding: 0; }
+    .news li {
+      display: grid; grid-template-columns: 110px 1fr; gap: 20px;
+      padding: 14px 0; border-bottom: 1px dashed var(--line);
+    }
+    .news li:last-child { border-bottom: none; }
+    .news time { font-weight: 600; color: var(--blue); font-size: 0.9rem; }
+
+    /* ---------- Publications ---------- */
+    .group-title {
+      font-family: var(--sans); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em;
+      color: var(--muted); margin: 40px 0 14px; font-weight: 600;
+    }
+    .group-title:first-of-type { margin-top: 0; }
     .pub {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 22px 24px;
-      margin-bottom: 16px;
+      display: grid; grid-template-columns: 64px 1fr; gap: 18px;
+      background: var(--white); border: 1px solid var(--line); border-radius: 10px;
+      padding: 22px 24px; margin-bottom: 14px;
     }
-    .pub h3 { color: var(--navy); font-size: 1.05rem; line-height: 1.45; margin: 0 0 6px; }
-    .authors { margin: 0 0 4px; font-size: 0.95rem; }
+    .pub .year { font-family: var(--serif); font-weight: 700; color: var(--blue); font-size: 1.15rem; }
+    .pub h3 { font-size: 1.08rem; line-height: 1.45; margin: 0 0 6px; }
+    .authors { margin: 0 0 3px; font-size: 0.94rem; }
     .authors strong { color: var(--navy); }
-    .venue { margin: 0 0 12px; color: var(--muted); font-size: 0.93rem; }
+    .venue { margin: 0 0 10px; color: var(--muted); font-size: 0.92rem; }
     .venue em { color: var(--ink); }
-    .pub-links { display: flex; gap: 18px; flex-wrap: wrap; font-size: 0.92rem; font-weight: 600; }
-    .badge {
-      display: inline-block;
-      background: var(--tint);
-      color: var(--blue);
-      font-size: 0.75rem;
-      font-weight: 600;
-      padding: 2px 10px;
-      border-radius: 999px;
-      margin-left: 6px;
-      vertical-align: middle;
+    .pub-links { display: flex; gap: 10px; flex-wrap: wrap; }
+    .pub-links a {
+      font-size: 0.82rem; font-weight: 600; border: 1px solid var(--line);
+      padding: 3px 12px; border-radius: 999px;
     }
-    .note { color: var(--muted); font-size: 0.93rem; margin-top: 24px; }
+    .pub-links a:hover { background: var(--tint); border-color: var(--blue); text-decoration: none; }
+    .badge {
+      display: inline-block; font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+      padding: 2px 10px; border-radius: 999px; margin-left: 6px; vertical-align: 2px;
+      background: var(--tint); color: var(--blue);
+    }
+    .badge.gold { background: var(--gold-tint); color: var(--gold); }
 
-    /* Contact */
-    .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; }
+    /* ---------- Talks ---------- */
+    .talk-list { list-style: none; margin: 0; padding: 0; }
+    .talk {
+      display: grid; grid-template-columns: 120px 1fr; gap: 20px;
+      padding: 18px 0; border-bottom: 1px solid var(--line);
+    }
+    .talk:last-child { border-bottom: none; }
+    .talk-type { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding-top: 3px; }
+    .talk-type.invited { color: var(--gold); }
+    .talk-type.oral { color: var(--blue); }
+    .talk-type.poster { color: var(--muted); }
+    .talk h3 { font-size: 1.02rem; margin: 0 0 4px; line-height: 1.45; }
+    .talk p { margin: 0; font-size: 0.91rem; color: var(--muted); }
+
+    /* ---------- Awards ---------- */
+    .awards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+    .award {
+      display: flex; gap: 16px; align-items: flex-start;
+      background: var(--white); border: 1px solid var(--line); border-radius: 10px; padding: 20px 22px;
+    }
+    .award-icon {
+      flex: none; width: 38px; height: 38px; border-radius: 50%;
+      background: var(--gold-tint); color: var(--gold);
+      display: grid; place-items: center;
+    }
+    .award h3 { font-size: 1rem; margin: 0 0 3px; line-height: 1.4; }
+    .award p { margin: 0; font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
+
+    /* ---------- Contact ---------- */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
     .contact-grid dl { margin: 0; }
-    .contact-grid dt { font-weight: 600; color: var(--navy); margin-top: 14px; }
+    .contact-grid dt { font-weight: 600; color: var(--navy); margin-top: 16px; }
     .contact-grid dt:first-child { margin-top: 0; }
     .contact-grid dd { margin: 2px 0 0; }
     .profiles { display: flex; flex-direction: column; gap: 10px; }
     .profile {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 12px 16px;
-      color: var(--ink);
-      font-weight: 600;
+      display: flex; justify-content: space-between; align-items: center;
+      background: var(--white); border: 1px solid var(--line); border-radius: 8px;
+      padding: 13px 18px; color: var(--ink); font-weight: 600;
     }
-    .profile span { color: var(--muted); font-weight: 400; font-size: 0.88rem; }
+    .profile span { color: var(--muted); font-weight: 400; font-size: 0.86rem; }
     .profile:hover { border-color: var(--blue); text-decoration: none; }
 
     footer {
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.88rem;
-      padding: 32px 24px;
-      border-top: 1px solid var(--line);
-      background: white;
+      text-align: center; color: var(--muted); font-size: 0.86rem;
+      padding: 32px 24px; border-top: 1px solid var(--line); background: var(--white);
     }
 
+    /* ---------- Responsive ---------- */
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; gap: 36px; padding: 64px 0 56px; }
+      .rp-figure { justify-self: start; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 28px; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .stat:nth-child(2) { border-right: none; }
+      .stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+    }
+    @media (max-width: 720px) {
+      .menu-btn { display: block; }
+      .nav-links {
+        display: none; position: absolute; top: 100%; left: 0; right: 0;
+        flex-direction: column; gap: 0; background: var(--white); border-bottom: 1px solid var(--line);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 12px 24px; border-top: 1px solid var(--line); }
+      nav { position: relative; }
+    }
     @media (max-width: 600px) {
-      nav { padding: 12px 16px; }
-      .nav-links { gap: 14px; }
       main { padding: 0 16px; }
-      section { padding: 48px 0; }
-      .hero { padding: 56px 0 48px; }
+      section { padding: 52px 0; }
+      h2 { font-size: 1.65rem; }
+      .pub { grid-template-columns: 1fr; gap: 4px; padding: 18px; }
+      .news li, .talk { grid-template-columns: 1fr; gap: 2px; }
+      .rp-figure canvas { width: 200px; height: 200px; }
     }
   </style>
 </head>
@@ -173,10 +256,14 @@
   <header>
     <nav>
       <a class="brand" href="#top">Md. Mehedi Hasan</a>
-      <div class="nav-links">
+      <button class="menu-btn" aria-label="Open menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">Menu</button>
+      <div class="nav-links" onclick="this.classList.remove('open')">
         <a href="#about">About</a>
         <a href="#research">Research</a>
+        <a href="#news">News</a>
         <a href="#publications">Publications</a>
+        <a href="#talks">Talks</a>
+        <a href="#awards">Awards</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
@@ -184,121 +271,330 @@
 
   <main id="top">
 
-    <!-- Hero -->
+    <!-- ===== Hero ===== -->
     <section class="hero">
-      <p class="eyebrow">Academic Research Portfolio</p>
-      <h1>Md. Mehedi Hasan</h1>
-      <p class="role">PhD Researcher · University of Tsukuba, Japan</p>
-      <p class="lead">
-        I work on time-series analysis, nonlinear dynamics, and recurrence-based
-        representations, with a focus on recurrence triangles and their applications
-        to time-series classification, clustering, and human gait analysis.
-      </p>
-      <div class="buttons">
-        <a class="btn btn-primary" href="#publications">View Publications</a>
-        <a class="btn btn-outline" href="https://scholar.google.com/citations?hl=en&amp;user=WpNU03MAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+      <div>
+        <p class="kicker">Doctoral Researcher · MEXT Scholar</p>
+        <h1>Md. Mehedi Hasan</h1>
+        <p class="role"><strong>Doctoral Program in Computer Science</strong></p>
+        <p class="role">Systems and Information Engineering, University of Tsukuba, Japan</p>
+        <p class="lead">
+          I develop <strong>recurrence triangle</strong> methods for analyzing time series from
+          nonlinear dynamical systems, and apply them to classification, clustering, and
+          human gait, including studying classification of Parkinson’s disease using gait data.
+        </p>
+        <div class="buttons">
+          <a class="btn btn-primary" href="#publications">View Publications</a>
+          <a class="btn btn-outline" href="https://scholar.google.com/citations?hl=en&amp;user=WpNU03MAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+        </div>
+        <ul class="tags">
+          <li>Recurrence Plots</li>
+          <li>Nonlinear Dynamics</li>
+          <li>Time-Series Classification</li>
+          <li>Gait Analysis</li>
+        </ul>
+      </div>
+      <figure class="rp-figure">
+        <canvas id="rp" width="260" height="260" aria-label="Recurrence plot of a chaotic signal"></canvas>
+        <figcaption>Recurrence plot of the Rössler system, drawn live</figcaption>
+      </figure>
+    </section>
+
+    <div class="stats" aria-label="Highlights">
+      <div class="stat"><b>3</b><span>Journal papers</span></div>
+      <div class="stat"><b>3</b><span>Conference papers &amp; reports</span></div>
+      <div class="stat"><b>6</b><span>Talks &amp; posters</span></div>
+      <div class="stat"><b>5</b><span>Awards &amp; fellowships</span></div>
+    </div>
+
+    <!-- ===== About ===== -->
+    <section id="about">
+      <p class="kicker">About</p>
+      <h2>About Me</h2>
+      <div class="about-grid">
+        <div>
+          <p>
+            I am a doctoral researcher in the Doctoral Program in Computer Science at the
+            University of Tsukuba, supported by the MEXT Scholarship. My work centers on
+            <strong>recurrence triangles</strong>: small triangular motifs in recurrence
+            plots that capture the local, fine-scale structure of a dynamical system.
+          </p>
+          <p>
+            I use these features for supervised and unsupervised time-series analysis,
+            with a particular focus on human gait: classifying Parkinson's disease patients
+            from small samples of walking data, and clustering gait by age group.
+          </p>
+          <p>
+            Before coming to Japan, I studied mathematics in Bangladesh, where I worked on
+            reaction–diffusion and predator–prey models. That background in dynamical systems
+            still shapes how I approach data.
+          </p>
+        </div>
+        <aside class="edu">
+          <h3>Education</h3>
+          <div class="edu-item current">
+            <b>Ph.D., Computer Science</b>
+            <span>University of Tsukuba, Japan<br>Expected March 2027</span>
+          </div>
+          <div class="edu-item">
+            <b>M.Sc., Applied Mathematics</b>
+            <span>Bangabandhu Sheikh Mujibur Rahman Science and Technology University (now Gopalganj Science and Technology University), 2023<br>1st position</span>
+          </div>
+          <div class="edu-item">
+            <b>B.Sc. (Honours), Mathematics</b>
+            <span>Same university, 2022<br>1st position</span>
+          </div>
+        </aside>
       </div>
     </section>
 
-    <!-- About -->
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        I am a researcher in Systems and Information Engineering at the University of
-        Tsukuba, Japan. My research develops representations of time-series data from
-        nonlinear dynamical systems, in particular <strong>recurrence triangles</strong>,
-        which capture fine-scale structure in recurrence plots.
-      </p>
-      <p>
-        I apply these methods to supervised and unsupervised time-series analysis, and
-        to real-world gait data, including the classification of Parkinson's disease
-        patients from their walking behavior and the clustering of gait by age group.
-      </p>
-    </section>
-
-    <!-- Research -->
+    <!-- ===== Research ===== -->
     <section id="research">
+      <p class="kicker">Research</p>
       <h2>Research Interests</h2>
-      <p class="section-intro">Methods for understanding complex temporal behavior.</p>
+      <p class="section-intro">Methods for understanding complex temporal behavior, from theory to clinical data.</p>
       <div class="grid">
         <div class="card">
+          <span class="num">01</span>
           <h3>Recurrence Triangles</h3>
-          <p>Triangular motifs in recurrence plots as interpretable features of local recurrence geometry.</p>
+          <p>Triangular motifs in recurrence plots as interpretable features of local recurrence geometry, compared with recurrence microstates.</p>
         </div>
         <div class="card">
+          <span class="num">02</span>
           <h3>Nonlinear Dynamics</h3>
-          <p>Analyzing temporal behavior in chaotic and nonlinear systems such as the Rössler and Lorenz models.</p>
+          <p>Chaotic and nonlinear systems such as the Rössler and Lorenz models, logistic maps, and reaction–diffusion equations.</p>
         </div>
         <div class="card">
-          <h3>Time-Series Classification &amp; Clustering</h3>
-          <p>Small-sample and unsupervised methods for distinguishing temporal patterns.</p>
+          <span class="num">03</span>
+          <h3>Time-Series Classification</h3>
+          <p>Small-sample, multi-class, and unsupervised methods for distinguishing temporal patterns robustly under noise.</p>
         </div>
         <div class="card">
+          <span class="num">04</span>
           <h3>Human Gait Analysis</h3>
-          <p>Gait dynamics for detecting Parkinson's disease and characterizing age-related differences.</p>
+          <p>Gait dynamics for studying Parkinson’s disease classification, motor-control-related patterns, and age-related differences.</p>
         </div>
       </div>
     </section>
 
-    <!-- Publications -->
+    <!-- ===== News ===== -->
+    <section id="news">
+      <p class="kicker">News</p>
+      <h2>Recent Highlights</h2>
+      <ul class="news">
+        <li><time>2026</time><span>Paper on recurrence triangle features for unsupervised gait clustering published in <em>Sensors</em>.</span></li>
+        <li><time>Feb 2026</time><span>Invited talk at the 2nd MDA Workshop: Interfaces of Control Theory, Biology, and Machine Learning, University of Tsukuba.</span></li>
+        <li><time>Jan 2026</time><span>Presented at IEICE, SAT Technology Showcase 2026, and the Tsukuba Medical and Industrial Collaboration Forum 2026.</span></li>
+        <li><time>Dec 2025</time><span>Parkinson’s gait classification paper published in <em>Chaos</em>.</span></li>
+        <li><time>Oct 2025</time><span>Received the <strong>NOLTA 2025 Student Paper Award</strong> in Naha, Okinawa.</span></li>
+        <li><time>Sep 2025</time><span>Oral presentation at the 11th International Symposium on Recurrence Plots, Mexico City (online).</span></li>
+      </ul>
+    </section>
+
+    <!-- ===== Publications ===== -->
     <section id="publications">
+      <p class="kicker">Publications</p>
       <h2>Publications</h2>
-      <p class="section-intro">For a complete and up-to-date list, see my
-        <a href="https://scholar.google.com/citations?hl=en&amp;user=WpNU03MAAAAJ" target="_blank" rel="noopener">Google Scholar</a> profile.</p>
+      <p class="section-intro">See also my
+        <a href="https://scholar.google.com/citations?hl=en&amp;user=WpNU03MAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a> and
+        <a href="https://orcid.org/0009-0002-4897-7497" target="_blank" rel="noopener noreferrer">ORCID</a> profiles.</p>
 
-      <h3 class="pub-group">Journal Articles</h3>
+      <h3 class="group-title">Peer-Reviewed Journal Papers</h3>
 
       <article class="pub">
-        <h3>Recurrence Triangle Features for Unsupervised Time Series Clustering: Application to Human Gait</h3>
-        <p class="authors"><strong>Md. Mehedi Hasan</strong>, Jun-ichiro Hirayama, Yoshiyuki Kobayashi, Masanori Shiro</p>
-        <p class="venue"><em>Sensors</em>, 26(19), 6137, 2026</p>
-        <div class="pub-links">
-          <a href="https://doi.org/10.3390/s26196137" target="_blank" rel="noopener">DOI →</a>
+        <div class="year">2026</div>
+        <div>
+          <h3>Recurrence Triangle Features for Unsupervised Time Series Clustering: Application to Human Gait</h3>
+          <p class="authors"><strong>Md. Mehedi Hasan</strong>, Jun-ichiro Hirayama, Yoshiyuki Kobayashi, Masanori Shiro</p>
+          <p class="venue"><em>Sensors</em>, vol. 26, no. 19, 6137</p>
+          <div class="pub-links">
+            <a href="https://doi.org/10.3390/s26196137" target="_blank" rel="noopener noreferrer">DOI</a>
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13667714/" target="_blank" rel="noopener noreferrer">Open access (PMC)</a>
+          </div>
         </div>
       </article>
 
       <article class="pub">
-        <h3>Small sample learning classifies Parkinson's disease patients based on their walking behavior
-          <span class="badge">Scilight featured</span></h3>
-        <p class="authors"><strong>Md. Mehedi Hasan</strong>, Takaaki Hattori, Yoshito Hirata</p>
-        <p class="venue"><em>Chaos: An Interdisciplinary Journal of Nonlinear Science</em>, 35(12), 123125, 2025</p>
-        <div class="pub-links">
-          <a href="https://doi.org/10.1063/5.0288442" target="_blank" rel="noopener">DOI →</a>
-          <a href="https://doi.org/10.1063/5.0359637" target="_blank" rel="noopener">Erratum (2026) →</a>
+        <div class="year">2025</div>
+        <div>
+          <h3>Small sample learning classifies Parkinson’s disease patients based on their walking behavior</h3>
+          <p class="authors"><strong>Md. Mehedi Hasan</strong>, Takaaki Hattori, Yoshito Hirata</p>
+          <p class="venue"><em>Chaos: An Interdisciplinary Journal of Nonlinear Science</em>, vol. 35, no. 12, 123125 (2025).</p>
+          <div class="pub-links">
+            <a href="https://doi.org/10.1063/5.0288442" target="_blank" rel="noopener noreferrer">DOI</a>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41369558" target="_blank" rel="noopener noreferrer">PubMed</a>
+            <a href="https://doi.org/10.1063/5.0359637" target="_blank" rel="noopener noreferrer">Published erratum (2026)</a>
+          </div>
         </div>
       </article>
 
-      <h3 class="pub-group">Technical Reports &amp; Presentations</h3>
+      <article class="pub">
+        <div class="year">2026</div>
+        <div>
+          <h3>Erratum: “Small sample learning classifies Parkinson’s disease patients based on their walking behavior”</h3>
+          <p class="authors"><strong>Md. Mehedi Hasan</strong>, Takaaki Hattori, Yoshito Hirata</p>
+          <p class="venue"><em>Chaos: An Interdisciplinary Journal of Nonlinear Science</em>, vol. 36, no. 10, article 109901 (2026).</p>
+          <div class="pub-links">
+            <a href="https://doi.org/10.1063/5.0359637" target="_blank" rel="noopener noreferrer">Erratum DOI</a>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42831765/" target="_blank" rel="noopener noreferrer">PubMed record</a>
+          </div>
+        </div>
+      </article>
 
       <article class="pub">
-        <h3>Unsupervised Classification of Chaotic Time Series Using Recurrence Triangles</h3>
-        <p class="authors"><strong>Md. Mehedi Hasan</strong>, Masanori Shiro</p>
-        <p class="venue">IEICE Technical Report, NLP2025-107 / MBE2025-47 / NC2025-69, January 2026</p>
-        <div class="pub-links">
-          <a href="https://ken.ieice.org/ken/paper/202601299cRG/eng/" target="_blank" rel="noopener">Details →</a>
+        <div class="year">2023</div>
+        <div>
+          <h3>Revisiting the spatiotemporal dynamics of a diffusive predator–prey system: An analytical approach</h3>
+          <p class="authors">Dipankar Kumar, <strong>Md. Mehedi Hasan</strong>, Gour Chandra Paul, Dipok Debnath</p>
+          <p class="venue"><em>Results in Physics</em>, vol. 44, 106122</p>
+          <div class="pub-links">
+            <a href="https://doi.org/10.1016/j.rinp.2022.106122" target="_blank" rel="noopener noreferrer">DOI</a>
+          </div>
+        </div>
+      </article>
+
+      <h3 class="group-title">Conference Papers &amp; Technical Reports</h3>
+
+      <article class="pub">
+        <div class="year">2026</div>
+        <div>
+          <h3>Unsupervised Classification of Chaotic Time Series Using Recurrence Triangles</h3>
+          <p class="authors"><strong>Md. Mehedi Hasan</strong>, Masanori Shiro</p>
+          <p class="venue"><em>IEICE Technical Report</em>, vol. 125, pp. 102–105, January 2026</p>
+          <div class="pub-links">
+            <a href="https://ken.ieice.org/ken/paper/202601299cRG/eng/" target="_blank" rel="noopener noreferrer">Details</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div class="year">2025</div>
+        <div>
+          <h3>Three-Class Time Series Classification Using Recurrence Triangle Analysis
+            <span class="badge gold">Student Paper Award</span></h3>
+          <p class="authors"><strong>Md. Mehedi Hasan</strong>, Yoshito Hirata</p>
+          <p class="venue"><em>2025 International Symposium on Nonlinear Theory and Its Applications (NOLTA 2025)</em>, pp. 426–429, Naha, Okinawa, Japan, October 2025</p>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div class="year">2024</div>
+        <div>
+          <h3>Phase Portrait Visualization, Sensitivity and Chaotic Analysis of the Fisher–Kolmogorov–Petrovsky–Piskunov model with External Perturbation</h3>
+          <p class="authors"><strong>Md. Mehedi Hasan</strong>, Dipankar Kumar</p>
+          <p class="venue"><em>23rd International Mathematics Conference</em>, Department of Mathematics, University of Rajshahi, Bangladesh, May 2024</p>
         </div>
       </article>
     </section>
 
-    <!-- Contact -->
+    <!-- ===== Talks ===== -->
+    <section id="talks">
+      <p class="kicker">Talks</p>
+      <h2>Talks &amp; Presentations</h2>
+      <p class="section-intro">Invited talks, oral presentations, and posters. Some entries describe the same research contribution presented in more than one format.</p>
+      <ul class="talk-list">
+        <li class="talk">
+          <span class="talk-type invited">Invited</span>
+          <div>
+            <h3>Small-Sample Machine Learning for Inferring Motor Control Breakdown in Parkinsonian Walking</h3>
+            <p>2nd MDA Workshop: Interfaces of Control Theory, Biology, and Machine Learning · University of Tsukuba, Japan · February 10, 2026</p>
+          </div>
+        </li>
+        <li class="talk">
+          <span class="talk-type poster">Poster</span>
+          <div>
+            <h3>Unsupervised Time Series Classification</h3>
+            <p>with Masanori Shiro · Tsukuba Medical and Industrial Collaboration Forum 2026 · Tsukuba, Japan · January 23, 2026</p>
+          </div>
+        </li>
+        <li class="talk">
+          <span class="talk-type poster">Poster</span>
+          <div>
+            <h3>Time Series Classification Using Recurrence Triangle Analysis</h3>
+            <p>with Masanori Shiro · SAT Technology Showcase 2026, Poster P-95 · Tsukuba International Congress Center · January 22, 2026</p>
+          </div>
+        </li>
+        <li class="talk">
+          <span class="talk-type oral">Oral + Poster</span>
+          <div>
+            <h3>Three-Class Time Series Classification Using Recurrence Triangle Analysis</h3>
+            <p>with Yoshito Hirata · NOLTA 2025 · Naha, Okinawa, Japan · October 2025</p>
+          </div>
+        </li>
+        <li class="talk">
+          <span class="talk-type oral">Oral</span>
+          <div>
+            <h3>Recurrence Triangles and Recurrence Microstates: A Comparative Approach for Robust Time Series Classification</h3>
+            <p>with Yoshito Hirata · 11th International Symposium on Recurrence Plots · Mexico City, Mexico (online) · September 2025</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===== Awards ===== -->
+    <section id="awards">
+      <p class="kicker">Awards</p>
+      <h2>Awards &amp; Honors</h2>
+      <p class="section-intro">Recognition and fellowships.</p>
+      <div class="awards">
+        <div class="award">
+          <div class="award-icon" aria-hidden="true">★</div>
+          <div>
+            <h3>NOLTA 2025 Student Paper Award</h3>
+            <p>International Symposium on Nonlinear Theory and Its Applications, 2025</p>
+          </div>
+        </div>
+        <div class="award">
+          <div class="award-icon" aria-hidden="true">★</div>
+          <div>
+            <h3>MEXT Scholarship</h3>
+            <p>Ministry of Education, Culture, Sports, Science and Technology, Japan · 2024–present</p>
+          </div>
+        </div>
+        <div class="award">
+          <div class="award-icon" aria-hidden="true">★</div>
+          <div>
+            <h3>National Science and Technology (NST) Fellowship</h3>
+            <p>Ministry of Science and Technology, Bangladesh · 2022–2023</p>
+          </div>
+        </div>
+        <div class="award">
+          <div class="award-icon" aria-hidden="true">★</div>
+          <div>
+            <h3>Chairman's Award, M.Sc. in Applied Mathematics</h3>
+            <p>1st position · Bangabandhu Sheikh Mujibur Rahman Science and Technology University · 2023</p>
+          </div>
+        </div>
+        <div class="award">
+          <div class="award-icon" aria-hidden="true">★</div>
+          <div>
+            <h3>Chairman's Award, B.Sc. (Honours) in Mathematics</h3>
+            <p>1st position · Bangabandhu Sheikh Mujibur Rahman Science and Technology University · 2022</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
     <section id="contact">
-      <h2>Contact &amp; Academic Profiles</h2>
-      <p class="section-intro">I welcome opportunities for academic discussion, research collaboration, and scholarly exchange.</p>
+      <p class="kicker">Contact</p>
+      <h2>Contact &amp; Profiles</h2>
+      <p class="section-intro">I welcome academic discussion, research collaboration, and scholarly exchange.</p>
       <div class="contact-grid">
         <dl>
           <dt>Affiliation</dt>
-          <dd>University of Tsukuba, Japan</dd>
+          <dd>Doctoral Program in Computer Science<br>Degree Programs in Systems and Information Engineering<br>University of Tsukuba, Japan</dd>
           <!-- Add your email by removing the comment markers on the next two lines:
           <dt>Email</dt>
           <dd><a href="mailto:you@example.com">you@example.com</a></dd>
           -->
         </dl>
         <div class="profiles">
-          <a class="profile" href="https://scholar.google.com/citations?hl=en&amp;user=WpNU03MAAAAJ" target="_blank" rel="noopener">
+          <a class="profile" href="https://scholar.google.com/citations?hl=en&amp;user=WpNU03MAAAAJ" target="_blank" rel="noopener noreferrer">
             Google Scholar <span>Citations →</span></a>
-          <a class="profile" href="https://orcid.org/0009-0002-4897-7497" target="_blank" rel="noopener">
+          <a class="profile" href="https://orcid.org/0009-0002-4897-7497" target="_blank" rel="noopener noreferrer">
             ORCID <span>0009-0002-4897-7497 →</span></a>
-          <a class="profile" href="https://www.researchgate.net/profile/Md-Hasan-1304" target="_blank" rel="noopener">
+          <a class="profile" href="https://www.researchgate.net/profile/Md-Hasan-1304" target="_blank" rel="noopener noreferrer">
             ResearchGate <span>Profile →</span></a>
         </div>
       </div>
@@ -307,8 +603,51 @@
   </main>
 
   <footer>
-    © 2026 Md. Mehedi Hasan · University of Tsukuba
+    © 2026 Md. Mehedi Hasan · University of Tsukuba · Academic research portfolio
   </footer>
 
+  <script>
+    // Draws a recurrence plot of the Rössler attractor's x-component in the hero.
+    (function () {
+      var canvas = document.getElementById('rp');
+      if (!canvas || !canvas.getContext) return;
+      var css = canvas.getBoundingClientRect().width || 260;
+      var dpr = window.devicePixelRatio || 1;
+      canvas.width = css * dpr; canvas.height = css * dpr;
+      var ctx = canvas.getContext('2d');
+      ctx.scale(dpr, dpr);
+
+      // Integrate the Rössler system (a=0.2, b=0.2, c=5.7) with RK4.
+      var a = 0.2, b = 0.2, c = 5.7, dt = 0.02;
+      var s = [1, 1, 1];
+      function f(v) { return [-v[1] - v[2], v[0] + a * v[1], b + v[2] * (v[0] - c)]; }
+      function step(v) {
+        var k1 = f(v);
+        var k2 = f(v.map(function (x, i) { return x + dt / 2 * k1[i]; }));
+        var k3 = f(v.map(function (x, i) { return x + dt / 2 * k2[i]; }));
+        var k4 = f(v.map(function (x, i) { return x + dt * k3[i]; }));
+        return v.map(function (x, i) { return x + dt / 6 * (k1[i] + 2 * k2[i] + 2 * k3[i] + k4[i]); });
+      }
+      for (var t = 0; t < 5000; t++) s = step(s);         // discard transient
+      var N = 180, sub = 14, pts = [];
+      for (var n = 0; n < N; n++) {
+        for (var k = 0; k < sub; k++) s = step(s);
+        pts.push([s[0], s[1], s[2]]);
+      }
+
+      // Recurrence matrix with threshold eps.
+      var eps = 3.0, pad = 10, cell = (css - 2 * pad) / N;
+      ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, css, css);
+      for (var i = 0; i < N; i++) {
+        for (var j = 0; j < N; j++) {
+          var dx = pts[i][0] - pts[j][0], dy = pts[i][1] - pts[j][1], dz = pts[i][2] - pts[j][2];
+          if (dx * dx + dy * dy + dz * dz < eps * eps) {
+            ctx.fillStyle = (i === j) ? '#172b4d' : 'rgba(65,105,161,0.85)';
+            ctx.fillRect(pad + i * cell, pad + (N - 1 - j) * cell, cell + 0.3, cell + 0.3);
+          }
+        }
+      }
+    })();
+  </script>
 </body>
 </html>
